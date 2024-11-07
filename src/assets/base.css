@@ -1,0 +1,12 @@
+/* color palette from <https://github.com/vuejs/theme> */
+.el-button--success {
+  --el-button-bg-color: #27ae60;
+  --el-button-text-color: var(--el-color-white);
+  --el-button-border-color: #27ae60;
+  --el-button-hover-bg-color: rgb(104, 198, 144);
+  --el-button-hover-text-color: var(--el-color-white);
+  --el-button-hover-border-color: rgb(104, 198, 144);
+  --el-button-active-bg-color: rgb(35, 143, 81);
+  --el-button-active-border-color: rgb(35, 143, 81);
+ 
+}

@@ -1,0 +1,13 @@
+/* .no-border-card {
+    border: none;
+} */
+
+.homepage-card {
+    background-color: #F5F5F5;
+    border: none;
+}
+
+.el-card:deep(.el-card__header) {
+    border-bottom: none;
+}
+

@@ -1,0 +1,26 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "include": [
+    "env.d.ts",
+    "src/**/*",
+    "src/**/*.vue"
+  ],
+  "compilerOptions": {
+    "lib": ["es2015", "es2016", "dom", "es2018.promise"],
+    "allowJs": true,
+    "noEmit": true,    
+    "ignoreDeprecations": "5.0",
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+  },
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
+}

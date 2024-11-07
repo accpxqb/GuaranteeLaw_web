@@ -1,0 +1,31 @@
+.demoTitle{
+    
+    height: 60px;
+     background-color: #27ae60;
+     border-top-left-radius: 20px;
+     border-top-right-radius: 20px;
+     color: aliceblue;
+     max-width: 100%;
+}
+.demoTitle span{
+   margin-left: 40px;
+   line-height: 60px;
+}
+.source{
+    padding: 24px!important;
+    border-bottom-left-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+}
+.demo-form{
+   max-width: 100%;
+   background-color: white;
+}
+.demo-block{
+    margin-bottom: 24px;
+    border: 1px solid #ebebeb;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: .2s;
+}

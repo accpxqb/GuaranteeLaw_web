@@ -1,0 +1,9 @@
+.el-button--primary{
+	--el-button-text-color: white;
+    --el-button-hover-bg-color: #3c4e62;
+    --el-button-hover-border-color: #3c4e62;
+}
+
+.el-space__item :last-child {
+    margin-right: 0
+}

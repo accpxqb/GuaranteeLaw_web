@@ -1,0 +1,8 @@
+{
+    "CashoutConfig":{
+    "SendCodeError": "Send code fail",
+    "SendCodeOk": "Send code successfully.",
+    "SaveOK": "Save successfully.",
+    "NotSet": "N/A"
+  }
+}

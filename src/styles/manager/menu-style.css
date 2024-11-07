@@ -1,0 +1,21 @@
+.el-menu {
+    border: 0;
+}
+
+.el-menu-item {
+    --el-menu-item-height: 50px;
+}
+
+.el-menu .el-menu-item {
+    --el-menu-item-height: 50px;
+}
+
+.el-sub-menu__title {
+    --el-menu-item-height: 50px;
+    --el-menu-sub-item-height: 50px;
+}
+
+.el-sub-menu .el-menu-item {
+    --el-menu-item-height: 50px;
+    --el-menu-sub-item-height: 50px;
+}

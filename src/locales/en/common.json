@@ -1,0 +1,34 @@
+{
+  "myVue": {
+    "头像": "Head",
+    "姓名": "Name",
+    "密码": "Password",
+    "邮箱账号": "Email account"
+  },
+  "button": {
+    "编辑": "Edit",
+    "语言": "English"
+  },
+  "headerVue": {
+    "Login": "Sign In",
+    "ClientRegister": "Client Sign up",
+    "Home": "Home",
+    "ContactUs": "Contact Us",
+    "ManageRegister": "Service Manager Sign up",
+    "Language": "Language",
+    "Signup": "Sign up",
+    "Logout": "Log Out",
+    "DemandList": "Demand List",
+    "MyInformation": "My Information",
+    "MyIncome": "My Income",
+    "AllOrder": "All Order"
+  },
+  "searchbarVue": {
+    "Default": "寻找优质服务经理人",
+    "SearchBtn": "Search"
+  },
+  "AddSourcing": {
+    "Title": "1",
+    "AddRoom": "add room"
+  }
+}
