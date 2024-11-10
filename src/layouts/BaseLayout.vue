@@ -28,10 +28,10 @@
 <script lang="ts" setup>
 import { RouterView, useRouter } from "vue-router";
 import BaseFooter from "@/components/BaseFooter.vue";
-import BaseHeader from "@/components/BaseHeader.vue";
+import BaseHeader from "@/components/NewBaseHeader.vue";
 import { useWindowSize } from "@vueuse/core";
 import { ref, watch } from "vue";
-import type { ElScrollbar } from "element-plus";
+import type  ElScrollbar  from "element-plus";
 const { width, height } = useWindowSize();
 
 //监听router变化，跳转新的页面后让滚动条回到顶部

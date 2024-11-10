@@ -16,8 +16,7 @@ import { createPinia } from "pinia";
 import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
 import VueAMap, { initAMapApiLoader } from "@vuemap/vue-amap";
 import "@vuemap/vue-amap/dist/style.css";
-import ManagerLevel from './views/components/managerlevel/index.vue';
-initAMapApiLoader({
+ initAMapApiLoader({
   key: "9b9285489faed4d892db9438b432af7e",
   securityJsCode: "0837961ce9347bbcb27de97744d1b909", // 新版key需要配合安全密钥使用
   plugin: [
@@ -57,5 +56,4 @@ app.use(VueAMap);
 //     console.log('全局捕获 info >>>', info)
 
 // }
-app.component('ManagerLevel', ManagerLevel);
-app.mount("#app");
+ app.mount("#app");

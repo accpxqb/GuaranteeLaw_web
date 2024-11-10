@@ -6,13 +6,8 @@
     >
       <el-col :span="4" class="justify-center-col">
         <el-space direction="vertical" alignment="flex-start">
-          <span class="footer-title-span">用户帮助</span>
-          <!-- <el-link
-          href="https://element-plus.org"
-          target="_blank"
-          style="font-size: small"
-          >申请退款</el-link
-        > -->
+          <span class="footer-title-span">中国法律担保网</span>
+          
           <el-link
             href="https://helpcenter.welearth.com/userAgreement"
             target="_blank"
@@ -20,18 +15,7 @@
           >
             用户协议
           </el-link>
-          <!-- <el-link
-          href="https://element-plus.org"
-          target="_blank"
-          style="font-size: small"
-          >反诈骗公告</el-link
-        >
-        <el-link
-          href="https://element-plus.org"
-          target="_blank"
-          style="font-size: small"
-          >消费者权益保障</el-link
-        > -->
+         
           <span class="footer-title-span" style="margin-top: 1em">
             公司规则
           </span>
@@ -45,37 +29,7 @@
         </el-space>
       </el-col>
       <el-divider direction="vertical" class="customer-divider" />
-      <!-- <el-col :span="4" class="justify-center-col"> -->
-      <!-- <el-space direction="vertical" alignment="flex-start"> -->
-      <!-- <span class="footer-title-span">加盟合作</span> -->
-      <!-- <el-link
-          href="https://element-plus.org"
-          target="_blank"
-          style="font-size: small"
-        >
-          代理合作
-        </el-link> -->
-      <!-- <el-link
-          href="https://element-plus.org"
-          target="_blank"
-          style="font-size: small"
-        >
-          商家入驻
-        </el-link> -->
-      <!-- <span class="footer-title-span">公司规则</span> -->
-      <!-- <el-link
-            href="https://helpcenter.welearth.com/Corp/privacy"
-            target="_blank"
-            style="font-size: small"
-          >
-            隐私政策 -->
-      <!-- </el-link> -->
-      <!-- <el-link href="https://element-plus.org" target="_blank" style="font-size:small;">规则中心</el-link>
-                <el-link href="https://element-plus.org" target="_blank" style="font-size:small;">规则目录</el-link>
-                <el-link href="https://element-plus.org" target="_blank" style="font-size:small;">规则评议院</el-link> -->
-      <!-- </el-space> -->
-      <!-- </el-col> -->
-      <!-- <el-divider direction="vertical" class="customer-divider" /> -->
+       
       <el-col :span="4" class="justify-center-col">
         <el-space direction="vertical" alignment="flex-start">
           <span class="footer-title-span">公司信息</span>
@@ -94,34 +48,7 @@
           >
             法律声明
           </el-link>
-          <!-- <el-link
-          href="https://element-plus.org"
-          target="_blank"
-          style="font-size: small"
-        >
-          知识产权
-        </el-link>
-        <el-link
-          href="https://element-plus.org"
-          target="_blank"
-          style="font-size: small"
-        >
-          用户协议
-        </el-link>
-        <el-link
-          href="https://element-plus.org"
-          target="_blank"
-          style="font-size: small"
-        >
-          营业执照
-        </el-link>
-        <el-link
-          href="https://element-plus.org"
-          target="_blank"
-          style="font-size: small"
-        >
-          商业诚信公约及管理办法
-        </el-link> -->
+       
         </el-space>
       </el-col>
       <el-divider direction="vertical" class="customer-divider" />
@@ -139,6 +66,8 @@
           </span>
         </el-space>
       </el-col>
+      <el-divider direction="vertical" class="customer-divider" />
+
       <el-col :span="4">
         <div style="display: flex; justify-content: space-between">
           <div style="text-align: center">
@@ -184,7 +113,7 @@
 
 <script lang="ts" setup>
 import { h, ref } from "vue";
-import { ElDivider } from "element-plus";
+import  ElDivider from "element-plus";
 const spacer = h(ElDivider, { direction: "vertical" });
 const currentYear = ref(new Date().getFullYear());
 </script>

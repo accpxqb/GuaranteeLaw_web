@@ -19,6 +19,7 @@ declare module '@vue/runtime-core' {
     IconSupport: typeof import('./src/components/icons/IconSupport.vue')['default']
     IconTooling: typeof import('./src/components/icons/IconTooling.vue')['default']
     Identify: typeof import('./src/components/Identify.vue')['default']
+    NewBaseHeader: typeof import('./src/components/NewBaseHeader.vue')['default']
     RecursiveMenuItem: typeof import('./src/components/RecursiveMenuItem.vue')['default']
     RoomPicDialog: typeof import('./src/components/RoomPicDialog.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
