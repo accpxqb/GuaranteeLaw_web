@@ -21,19 +21,19 @@
         <el-row class="sosuo" style="">
           <el-col class="sosuocol" :span="6" style="">
             <div class="sosuotitle">发布者组织体</div>
-            <el-select v-model="formInline.PublishOrganization" clearable placeholder="请选择"  style="width: 240px">
+            <el-select v-model="formInline.PublishOrganization" clearable placeholder="请选择" style="width: 240px">
               <el-option v-for="item in options" :key="item.Id" :label="item.Value" :value="item.Value" />
             </el-select>
           </el-col>
           <el-col class="sosuocol" :span="6">
             <div class="sosuotitle">法律名称</div>
-           
+
             <el-input v-model="formInline.LegalName" style="width: 240px" placeholder="请输入您要检索的法律名称" clearable />
           </el-col>
           <el-col class="sosuocol" :span="6">
             <div class="sosuotitle">文献内容</div>
-            
-            <el-input v-model="formInline.Content"  style="width: 240px" placeholder="请输入您要检索的文献内容" clearable />
+
+            <el-input v-model="formInline.Content" style="width: 240px" placeholder="请输入您要检索的文献内容" clearable />
 
           </el-col>
           <el-col :span="6">
@@ -43,7 +43,16 @@
 
         </el-row>
 
+        <el-row class="lmcontent" :gutter="20">
+          <el-col class="contentLeft" :span="7">
+            <div class="demo-collapse">
+              法律法规
+            </div>
+          </el-col>
+          <el-col class="contentLeft" :span="17">
 
+          </el-col>
+        </el-row>
 
 
 
