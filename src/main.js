@@ -30,8 +30,6 @@ import "@vuemap/vue-amap/dist/style.css";
     "AMap.MapType",
   ],
 
-
-  
   //Loca:{
   //  version: '2.0.0'
   //} // 如果需要使用loca组件库，需要加载Loca
