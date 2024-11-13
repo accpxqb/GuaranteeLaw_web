@@ -78,7 +78,7 @@
 														clearable />
 												</div>
 											</div>
-											<el-button type="submit">立即搜索</el-button>
+											<el-button type="primary" @click="doSearch()" >立即搜索</el-button>
 										</form>
 									</el-col>
 								</el-row>
@@ -249,7 +249,11 @@ import { getTagList, getList, getHomeList } from "@/api/guarantee";
 import { ElMessage } from 'element-plus'
 import config from '@/utils/config';
 
+const doSearch=()=>{
+	formInline.value.Tag = null
+	getPageList()
 
+}
 const tagClick = (tag) => {
 	formInline.value.Tag = tag
 	getPageList()
