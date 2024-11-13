@@ -9,7 +9,6 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    '副本': typeof import('./src/components/BaseFooter - 副本.vue')['default']
     BaseEmpty: typeof import('./src/components/BaseEmpty.vue')['default']
     BaseFooter: typeof import('./src/components/BaseFooter.vue')['default']
     BaseFooter_bak20241113: typeof import('./src/components/BaseFooter_bak20241113.vue')['default']
