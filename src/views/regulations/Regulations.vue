@@ -1,64 +1,517 @@
 <template>
-
-  <div class="background-container">
-    <!-- 其他内容 -->
-    <div class="lmbt">法律法规</div>
-    <div class="lmjj">法律法规简介</div>
-  </div>
-  <div>
-    <el-row justify="center" align="middle">
-      <el-col :span="16">
-        <el-row style="margin-top: 10px;">
-          <el-col :span="12" justify="start">法律法规</el-col>
-          <el-col :span="12" justify="end" class="right-align">
-            <div>
-              <button @click="toggleButton('国内')" :class="{ active: selectedButton === '国内' }">国内</button>
-              <button @click="toggleButton('国外')" :class="{ active: selectedButton === '国外' }">国外</button>
-            </div>
-
-          </el-col>
-        </el-row>
-        <el-row class="sosuo" style="">
-          <el-col class="sosuocol" :span="6" style="">
-            <div class="sosuotitle">发布者组织体</div>
-            <el-select v-model="formInline.PublishOrganization" clearable placeholder="请选择" style="width: 240px">
-              <el-option v-for="item in options" :key="item.Id" :label="item.Value" :value="item.Value" />
-            </el-select>
-          </el-col>
-          <el-col class="sosuocol" :span="6">
-            <div class="sosuotitle">法律名称</div>
-
-            <el-input v-model="formInline.LegalName" style="width: 240px" placeholder="请输入您要检索的法律名称" clearable />
-          </el-col>
-          <el-col class="sosuocol" :span="6">
-            <div class="sosuotitle">文献内容</div>
-
-            <el-input v-model="formInline.Content" style="width: 240px" placeholder="请输入您要检索的文献内容" clearable />
-
-          </el-col>
-          <el-col :span="6">
-            <el-button style="width: 100%;height: 100%;" type="primary">立即搜索</el-button>
-
-          </el-col>
-
-        </el-row>
-
-        <el-row class="lmcontent" :gutter="20">
-          <el-col class="contentLeft" :span="7">
-            <div class="demo-collapse">
-              法律法规
-            </div>
-          </el-col>
-          <el-col class="contentLeft" :span="17">
-
-          </el-col>
-        </el-row>
-
-
-
-      </el-col>
-    </el-row>
-  </div>
+  <!-- Hero Section Begin -->
+  <section class="hero spad set-bg" data-setbg="./src/assets/img/hero/h1_hero.jpg" style="background-image: url('./src/assets/img/hero/h1_hero.jpg');">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12">
+                  <div class="hero__text">
+                      <h2>信融信</h2>
+                      <p>您的法律渠道专家</p>
+                      <a href="#" class="primary-btn">关于我们</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- Hero Section End -->
+  
+  <!--? Services Ara Start -->
+  <el-row justify="center" align="middle">
+  <el-row class="services-area section-padding4">
+  	<el-row class="container">
+  		<div class="row align-items-end mb-50">
+  			<div class="cl-xl-6 col-lg-6 col-md-10">
+  				<!-- Section Tittle -->
+  				<div class="section-tittle ">
+  					<span>信融信&nbsp;&nbsp;</span>
+  					<h2>法律法规</h2>
+  				</div>
+  			</div>
+  			<div class="col-xl-6 col-lg-6">
+  				<div class="properties__button">
+  					<!--Nav Button  -->
+  					<nav>
+  						<div class="nav nav-tabs" id="nav-tab" role="tablist">
+								<button class="nav-item nav-link" @click="toggleButton('国内')" :class="{ active: selectedButton === '国内' }">国内</button>
+								<button class="nav-item nav-link" @click="toggleButton('国外')" :class="{ active: selectedButton === '国外' }">国外</button>
+  						</div>
+  					</nav>
+  					<!--End Nav Button  -->
+  				</div>
+  			</div>
+  		</div>
+  		<!-- Nav Card -->
+  		<div class="tab-content" id="nav-tabContent">
+  			<!-- card one -->
+  			<div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+  				aria-labelledby="nav-home-tab">
+  				<!-- Search Begin -->
+  				<el-row class="">
+  				    <el-row class="container">
+  				        <el-row class="row">
+  				            <el-col  :span="24">
+  				                <form action="#" class="filter__form">
+  									<div class="filter__item last__item">
+  									    <h5>发布者组织体</h5>
+										<div class="filter__item__input">
+  									    <el-select class="nice-select" v-model="formInline.PublishOrganization" clearable placeholder="请选择">
+  									      <el-option v-for="item in options" :key="item.Id" :label="item.Value" :value="item.Value" />
+  									    </el-select>
+										</div>
+  									</div>
+  				                    <div class="filter__item">
+  				                        <h5>法律名称</h5>
+  				                        <div class="filter__item__input">
+  				                            <el-input v-model="formInline.LegalName" placeholder="请输入您要检索的法律名称" clearable />
+  				                        </div>
+  				                    </div>
+  				                    <div class="filter__item">
+  				                        <h5>文献内容</h5>
+										<div class="filter__item__input">
+										    <el-input v-model="formInline.Content" placeholder="请输入您要检索的文献内容" clearable />
+										</div>
+  				                    </div>
+									<el-button type="submit">立即搜索</el-button>
+  				                </form>
+  				            </el-col>
+  				        </el-row>
+  				    </el-row>
+  				</el-row>
+  				<!-- Search End -->
+  				<!--================Blog Area =================-->
+  				<section class="blog_area section-padding5">
+  					<div class="container">
+  						<div class="row">
+  							<el-col  :span="6">
+  								<div class="blog_right_sidebar">
+  									<aside class="single_sidebar_widget post_category_widget">
+  										<h4 class="widget_title">法律法规</h4>
+  										<div class="dbdtwrap">
+  											<div class="dbdtnav">
+  												<ul>
+  													<li class="dbdtnav-list">
+  														<h2 class="on">
+  															<div></div>
+  															法律法规
+  															<i></i>
+  														</h2>
+  													</li>
+  													<li class="dbdtnav-list">
+  														<h2>融资租赁
+  															<i></i>
+  														</h2>
+  													</li>
+  													<li class="dbdtnav-list">
+  														<h2>保理
+  															<i></i>
+  														</h2>
+  													</li>
+  													<li class="dbdtnav-list">
+  														<h2>其他
+  															<i></i>
+  														</h2>
+  													</li>
+  												</ul>
+  											</div>
+  										</div>
+  									</aside>
+  				
+  									<aside class="single_sidebar_widget popular_post_widget">
+  										<h3 class="widget_title">热门法律法规</h3>
+  										<div class="media post_item">
+  											<el-image src="../../src/assets/img/post/post_1.png" alt="post"></el-image>
+  											<div class="media-body">
+  												<a href="tongyong_details.html">
+  													<h3>文章1文章1文章1文章1...</h3>
+  												</a>
+  												<p>2024-11-05</p>
+  											</div>
+  										</div>
+  										<div class="media post_item">
+  											<el-image src="../../src/assets/img/post/post_1.png" alt="post"></el-image>
+  											<div class="media-body">
+  												<a href="#">
+  													<h3>文章1文章1文章1文章1...</h3>
+  												</a>
+  												<p>2024-11-05</p>
+  											</div>
+  										</div>
+  										<div class="media post_item">
+  											<el-image src="../../src/assets/img/post/post_1.png" alt="post"></el-image>
+  											<div class="media-body">
+  												<a href="#">
+  													<h3>文章1文章1文章1文章1...</h3>
+  												</a>
+  												<p>2024-11-05</p>
+  											</div>
+  										</div>
+  										<div class="media post_item">
+  											<el-image src="../../src/assets/img/post/post_1.png" alt="post"></el-image>
+  											<div class="media-body">
+  												<a href="#">
+  													<h3>文章1文章1文章1文章1...</h3>
+  												</a>
+  												<p>2024-11-05</p>
+  											</div>
+  										</div>
+  									</aside>
+  									<aside class="single_sidebar_widget tag_cloud_widget">
+  										<h4 class="widget_title">热搜Tag</h4>
+  										<ul class="list">
+  											<li>
+  												<a href="#">财政</a>
+  											</li>
+  											<li>
+  												<a href="#">专项资金</a>
+  											</li>
+  											<li>
+  												<a href="#">人才</a>
+  											</li>
+  											<li>
+  												<a href="#">富民创业</a>
+  											</li>
+  											<li>
+  												<a href="#">数字人民币</a>
+  											</li>
+  											<li>
+  												<a href="#">民营企业</a>
+  											</li>
+  											<li>
+  												<a href="#">高质量发展</a>
+  											</li>
+  											<li>
+  												<a href="#">环境保护</a>
+  											</li>
+  										</ul>
+  									</aside>
+  								</div>
+  							</el-col>
+  				
+  							<el-col  :span="17"  :gutter="20">
+  								<div class="blog_left_sidebar">
+  									<article class="blog_item">
+  										<div class="blog_top">
+  											<span>法律法规</span>
+  											<div class="wrapper">
+  												<input id="exp1" class="exp" type="checkbox">
+  												<div class="text">
+  													<label class="btn_zs" for="exp1"></label>
+  													<div class="single_sidebar_widget tag_cloud_widget">
+  														<ul class="blist888">
+  															<li>
+  																<a href="#">财政</a>
+  															</li>
+  															<li>
+  																<a href="#">专项资金</a>
+  															</li>
+  															<li>
+  																<a href="#">人才</a>
+  															</li>
+  															<li>
+  																<a href="#">富民创业</a>
+  															</li>
+  															<li>
+  																<a href="#">数字人民币</a>
+  															</li>
+  															<li>
+  																<a href="#">财政</a>
+  															</li>
+  															<li>
+  																<a href="#">专项资金</a>
+  															</li>
+  															<li>
+  																<a href="#">人才</a>
+  															</li>
+  															<li>
+  																<a href="#">富民创业</a>
+  															</li>
+  															<li>
+  																<a href="#">数字人民币</a>
+  															</li>
+  															<li>
+  																<a href="#">财政</a>
+  															</li>
+  															<li>
+  																<a href="#">专项资金</a>
+  															</li>
+  															<li>
+  																<a href="#">人才</a>
+  															</li>
+  															<li>
+  																<a href="#">富民创业</a>
+  															</li>
+  															<li>
+  																<a href="#">财政</a>
+  															</li>
+  															<li>
+  																<a href="#">专项资金</a>
+  															</li>
+  															<li>
+  																<a href="#">人才</a>
+  															</li>
+  															<li>
+  																<a href="#">富民创业</a>
+  															</li>
+  															<li>
+  																<a href="#">数字人民币</a>
+  															</li>
+  															<li>
+  																<a href="#">财政</a>
+  															</li>
+  															<li>
+  																<a href="#">专项资金</a>
+  															</li>
+  															<li>
+  																<a href="#">人才</a>
+  															</li>
+  															<li>
+  																<a href="#">富民创业</a>
+  															</li>
+  														</ul>
+  													</div>
+  												</div>
+  											</div>
+  										</div>
+  										<div class="blog_details">
+  											<div class="anlicss">
+  											<div class="btnanli01"><a class="d-inline-block" href="tongyong_details.html">
+  												<h2>法律名称</h2>
+  											</a>
+  											</div>
+  											<div class="btnanli02">
+  												<div class="btn btn-ans"><a href="#">查阅</a></div>
+  												<div class="btn btn-ans"><a href="#">下载</a></div>
+  											</div>
+  											</div>
+  											<p>文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情。
+  											</p>
+  											<div class="single_sidebar_widget tag_cloud_widget">
+  												<ul class="blist">
+  													<li>
+  														<a href="#">发布</a>
+  													</li>
+  													<li>
+  														<a href="#">翻译者</a>
+  													</li>
+  													<li>
+  														<a href="#">人才</a>
+  													</li>
+  													<li>
+  														<a href="#">富民创业</a>
+  													</li>
+  													<li>
+  														<a href="#">数字人民币</a>
+  													</li>
+  												</ul>
+  											</div>
+  											<ul class="blog-info-link">
+  												<li><a href="#"><i class="fa fa-comments"></i>发布组织体</a></li>
+  												<li><a href="#"><i class="fa fa-users"></i>翻译者</a></li>
+  												<li><a href="#"><i class="fa fa-calendar-times"></i>2024-11-01</a></li>
+  											</ul>
+  										</div>
+  									</article>
+  				
+  									<article class="blog_item">
+  										<div class="blog_details">
+  											<div class="anlicss">
+  											<div class="btnanli01"><a class="d-inline-block" href="tongyong_details.html">
+  												<h2>法律名称</h2>
+  											</a>
+  											</div>
+  											<div class="btnanli02">
+  												<div class="btn btn-ans"><a href="#">查阅</a></div>
+  												<div class="btn btn-ans"><a href="#">下载</a></div>
+  											</div>
+  											</div>
+  											<p>文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情。
+  											</p>
+  											<div class="single_sidebar_widget tag_cloud_widget">
+  												<ul class="blist">
+  													<li>
+  														<a href="#">财政</a>
+  													</li>
+  													<li>
+  														<a href="#">专项资金</a>
+  													</li>
+  													<li>
+  														<a href="#">人才</a>
+  													</li>
+  													<li>
+  														<a href="#">富民创业</a>
+  													</li>
+  													<li>
+  														<a href="#">数字人民币</a>
+  													</li>
+  												</ul>
+  											</div>
+  											<ul class="blog-info-link">
+  												<li><a href="#"><i class="fa fa-comments"></i>发布组织体</a></li>
+  												<li><a href="#"><i class="fa fa-users"></i>翻译者</a></li>
+  												<li><a href="#"><i class="fa fa-calendar-times"></i>2024-11-01</a></li>
+  											</ul>
+  										</div>
+  									</article>
+  				
+  									<article class="blog_item">
+  										<div class="blog_details">
+  											<div class="anlicss">
+  											<div class="btnanli01"><a class="d-inline-block" href="tongyong_details.html">
+  												<h2>法律名称</h2>
+  											</a>
+  											</div>
+  											<div class="btnanli02">
+  												<div class="btn btn-ans"><a href="#">查阅</a></div>
+  												<div class="btn btn-ans"><a href="#">下载</a></div>
+  											</div>
+  											</div>
+  											<p>文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情。
+  											</p>
+  											<div class="single_sidebar_widget tag_cloud_widget">
+  												<ul class="blist">
+  													<li>
+  														<a href="#">财政</a>
+  													</li>
+  													<li>
+  														<a href="#">专项资金</a>
+  													</li>
+  													<li>
+  														<a href="#">人才</a>
+  													</li>
+  													<li>
+  														<a href="#">富民创业</a>
+  													</li>
+  													<li>
+  														<a href="#">数字人民币</a>
+  													</li>
+  												</ul>
+  											</div>
+  											<ul class="blog-info-link">
+  												<li><a href="#"><i class="fa fa-comments"></i>发布组织体</a></li>
+  												<li><a href="#"><i class="fa fa-users"></i>翻译者</a></li>
+  												<li><a href="#"><i class="fa fa-calendar-times"></i>2024-11-01</a></li>
+  											</ul>
+  										</div>
+  									</article>
+  				
+  									<article class="blog_item">
+  										<div class="blog_details">
+  											<div class="anlicss">
+  											<div class="btnanli01"><a class="d-inline-block" href="tongyong_details.html">
+  												<h2>法律名称</h2>
+  											</a>
+  											</div>
+  											<div class="btnanli02">
+  												<div class="btn btn-ans"><a href="#">查阅</a></div>
+  												<div class="btn btn-ans"><a href="#">下载</a></div>
+  											</div>
+  											</div>
+  											<p>文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情。
+  											</p>
+  											<div class="single_sidebar_widget tag_cloud_widget">
+  												<ul class="blist">
+  													<li>
+  														<a href="#">财政</a>
+  													</li>
+  													<li>
+  														<a href="#">专项资金</a>
+  													</li>
+  													<li>
+  														<a href="#">人才</a>
+  													</li>
+  													<li>
+  														<a href="#">富民创业</a>
+  													</li>
+  													<li>
+  														<a href="#">数字人民币</a>
+  													</li>
+  												</ul>
+  											</div>
+  											<ul class="blog-info-link">
+  												<li><a href="#"><i class="fa fa-comments"></i>发布组织体</a></li>
+  												<li><a href="#"><i class="fa fa-users"></i>翻译者</a></li>
+  												<li><a href="#"><i class="fa fa-calendar-times"></i>2024-11-01</a></li>
+  											</ul>
+  										</div>
+  									</article>
+  				
+  									<article class="blog_item">
+  										<div class="blog_details">
+  											<div class="anlicss">
+  											<div class="btnanli01"><a class="d-inline-block" href="tongyong_details.html">
+  												<h2>法律名称</h2>
+  											</a>
+  											</div>
+  											<div class="btnanli02">
+  												<div class="btn btn-ans"><a href="#">查阅</a></div>
+  												<div class="btn btn-ans"><a href="#">下载</a></div>
+  											</div>
+  											</div>
+  											<p>文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情文章详情。
+  											</p>
+  											<div class="single_sidebar_widget tag_cloud_widget">
+  												<ul class="blist">
+  													<li>
+  														<a href="#">财政</a>
+  													</li>
+  													<li>
+  														<a href="#">专项资金</a>
+  													</li>
+  													<li>
+  														<a href="#">人才</a>
+  													</li>
+  													<li>
+  														<a href="#">富民创业</a>
+  													</li>
+  													<li>
+  														<a href="#">数字人民币</a>
+  													</li>
+  												</ul>
+  											</div>
+  											<ul class="blog-info-link">
+  												<li><a href="#"><i class="fa fa-comments"></i>发布组织体</a></li>
+  												<li><a href="#"><i class="fa fa-users"></i>翻译者</a></li>
+  												<li><a href="#"><i class="fa fa-calendar-times"></i>2024-11-01</a></li>
+  											</ul>
+  										</div>
+  									</article>
+  				
+  									<nav class="blog-pagination justify-content-center d-flex">
+  										<ul class="pagination">
+  											<li class="page-item">
+  												<a href="#" class="page-link" aria-label="Previous">
+  													<i class="ti-angle-left"></i>
+  												</a>
+  											</li>
+  											<li class="page-item">
+  												<a href="#" class="page-link">1</a>
+  											</li>
+  											<li class="page-item active">
+  												<a href="#" class="page-link">2</a>
+  											</li>
+  											<li class="page-item">
+  												<a href="#" class="page-link" aria-label="Next">
+  													<i class="ti-angle-right"></i>
+  												</a>
+  											</li>
+  										</ul>
+  									</nav>
+  								</div>
+  							</el-col>
+  				
+  						</div>
+  					</div>
+  				</section>
+  				<!--================Blog Area =================-->
+  			</div>
+		</div>
+  		<!-- End Nav Card -->
+  	</el-row>
+  </el-row>
+  </el-row>
+  <!-- Services Ara End -->
+  
+  
 
 </template>
 

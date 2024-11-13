@@ -1,0 +1,1 @@
+const e={SiteName:"唯乐思, 同住一个地球。",LoginTitle:"唯乐思 - 登录",RegisterTitle:"唯乐思 - 注册",RegisterMobileTitle:"唯乐思 - 短信注册"},t={Titles:e};export{e as Titles,t as default};

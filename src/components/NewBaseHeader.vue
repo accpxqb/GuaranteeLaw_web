@@ -1,41 +1,54 @@
 <template>
-    <el-row style="height: 60px;" justify="center" align="middle">
-        <el-col :span="16">
-            <!-- background-color="#545c64"
-            text-color="#fff" -->
-            <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" :ellipsis="false"
-
-                active-text-color="#375498"
-                @select="handleSelect">
-                <el-menu-item index="0">
-                    <el-link :underline="false" href="/">
-                        <el-space>
-                            <img style="width: 25px; height: 25px" :src="logo" alt="Element logo" />
-                            中国法律担保网
-                        </el-space>
-                    </el-link>
-                </el-menu-item>
-                <el-menu-item index="/">首页</el-menu-item>
-                <el-menu-item index="/regulations">法律法规</el-menu-item>
-                <el-menu-item index="/fxll">法学理论</el-menu-item>
-                <el-menu-item index="/alfx">案例分析</el-menu-item>
-                <el-menu-item index="/zjzx">专家咨询</el-menu-item>
-                <el-sub-menu index="/hydt">
-                    <template #title>行业动态</template>
-                    <el-menu-item index="/xrx">信融信</el-menu-item>
-                    <el-menu-item index="/bl">保理</el-menu-item>
-                    <el-menu-item index="/rzzl">融资租赁</el-menu-item>
-                    <el-menu-item index="/jypx">教育培训</el-menu-item>
-                    <el-menu-item index="/qt">其他</el-menu-item>
-
-                </el-sub-menu>
-                <el-menu-item index="/lxwm">联系我们</el-menu-item>
-
-            </el-menu>
-
-        </el-col>
-    </el-row>
-
+	<el-row class="header-area">
+		<div class="main-header  header-sticky sticky-bar">
+			<div class="container-fluid">
+				<div class="row align-items-center">
+					<!-- Logo -->
+					<el-col :span="4">
+						<div class="logo">
+							<!--<a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>-->
+							<span style="font-size: 30px; line-height: 103px;">中国担保法律网</span>
+						</div>
+					</el-col>
+					<el-col :span="20">
+						<div class="menu-main d-flex align-items-center justify-content-end">
+							<!-- Main-menu -->
+							<div class="main-menu f-right d-none d-lg-block">
+								<nav>
+									<el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" :ellipsis="false"
+									    active-text-color="#375498"
+									    @select="handleSelect"  id="navigation">
+										<el-menu-item><a href="/">首页</a></el-menu-item>
+										<el-menu-item><a href="/regulations">法律法规</a></el-menu-item>
+										<el-menu-item><a href="/fxll">法学理论</a></el-menu-item>
+										<el-menu-item><a href="/alfx">案例分析</a></el-menu-item>
+										<el-menu-item><a href="/zjzx">专家咨询</a></el-menu-item>
+										<el-menu-item><a href="/hydt">行业动态</a></el-menu-item>
+										<!--<el-sub-menu index="/hydt">
+										    <template #title>行业动态</template>
+										    <el-menu-item index="/xrx">信融信</el-menu-item>
+										    <el-menu-item index="/bl">保理</el-menu-item>
+										    <el-menu-item index="/rzzl">融资租赁</el-menu-item>
+										    <el-menu-item index="/jypx">教育培训</el-menu-item>
+										    <el-menu-item index="/qt">其他</el-menu-item>
+										</el-sub-menu>-->
+										<el-menu-item><a href="/gywm">关于我们</a></el-menu-item>
+									</el-menu>
+								</nav>
+							</div>
+							<div class="header-right-btn f-right d-none d-lg-block ml-30">
+								<a href="#" class="header-btn">电话号码</a>
+							</div>
+						</div>
+					</el-col>
+					<!-- Mobile Menu -->
+					<div class="col-12">
+						<div class="mobile_menu d-block d-lg-none"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</el-row>
 </template>
 
 <script lang="ts" setup>

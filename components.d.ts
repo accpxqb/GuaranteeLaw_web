@@ -9,8 +9,10 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    '副本': typeof import('./src/components/BaseFooter - 副本.vue')['default']
     BaseEmpty: typeof import('./src/components/BaseEmpty.vue')['default']
     BaseFooter: typeof import('./src/components/BaseFooter.vue')['default']
+    BaseFooter_bak20241113: typeof import('./src/components/BaseFooter_bak20241113.vue')['default']
     BaseHeader: typeof import('./src/components/BaseHeader.vue')['default']
     ErrorPage: typeof import('./src/components/ErrorPage.vue')['default']
     IconCommunity: typeof import('./src/components/icons/IconCommunity.vue')['default']
@@ -20,8 +22,8 @@ declare module '@vue/runtime-core' {
     IconTooling: typeof import('./src/components/icons/IconTooling.vue')['default']
     Identify: typeof import('./src/components/Identify.vue')['default']
     NewBaseHeader: typeof import('./src/components/NewBaseHeader.vue')['default']
+    NewBaseHeader_bak20241113: typeof import('./src/components/NewBaseHeader_bak20241113.vue')['default']
     RecursiveMenuItem: typeof import('./src/components/RecursiveMenuItem.vue')['default']
-    RoomPicDialog: typeof import('./src/components/RoomPicDialog.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SearchBar: typeof import('./src/components/SearchBar.vue')['default']
