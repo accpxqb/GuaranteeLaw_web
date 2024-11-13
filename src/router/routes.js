@@ -28,6 +28,18 @@ routes.push({
       onMenu: "false",
     },
     {
+      path: "theory",
+      name: "theory",
+      component: () => import("../views/theory/Theory.vue"),
+      onMenu: "false",
+    },
+    {
+      path: "case",
+      name: "case",
+      component: () => import("../views/case/Case.vue"),
+      onMenu: "false",
+    },
+    {
       path: "",
       name: "HomePage",
       component: () => import("../views/homepage/Homepage.vue"),
