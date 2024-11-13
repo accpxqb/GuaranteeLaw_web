@@ -65,6 +65,7 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { getListByValue } from "@/api/settingitme";
+import { getTagList,getList,getHomeList } from "@/api/guarantee";
 import { ElMessage } from 'element-plus'
 
 const formInline = ref({})
@@ -92,9 +93,58 @@ const GetOptions = () => {
     }
   });
 }
+//分页列表
+const pageRequest = ref({
+    PastPage: 0,
+    CurrentPage: 1,
+    PageSize: 20,
+    total:0,
+    PageSizes:[20, 100, 200, 300]
+})
+const request = ref({
+     
+})
+const getPageList = ()=>{
+    let data = { ...request.value, ...pageRequest.value }
+    console.log(data)
+    getList(data).then(res=>{
+        console.log(res)
+        if(res.code){
+             
+            pageRequest.value.total=res.data.count
+             
+            
+        }
+    })
+}
+//tag列表
+const getAllTagList = ()=>{
+ 
+    getTagList().then(res=>{
+        console.log(res)
+        if(res.code){
+             
+            
+        }
+    })
+}
+//flag文章列表
+const getFlagList = ()=>{
+    
+    getHomeList({flag:"h",num:5}).then(res=>{
+        console.log(res)
+        if(res.code){
+             
+            
+        }
+    })
+}
 
 onMounted(() => {
   GetOptions()
+  getPageList()
+  getAllTagList()
+  getFlagList()
 });
 
 </script>
