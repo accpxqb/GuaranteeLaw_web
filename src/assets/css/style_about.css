@@ -391,17 +391,7 @@ hr {
 
 .btn {
 	-moz-user-select: none;
-	background: #ffff;
-	border: medium none;
-	border-radius: 5px;
-	color: #375498;
-	cursor: pointer;
-	display: inline-block;
-	font-size: 14px;
-	font-weight: 500;
-	letter-spacing: 1px;
-	line-height: 0;
-	margin-bottom: 0;
+	
 	padding: 25px 33px;
 	text-align: center;
 	text-transform: uppercase;
@@ -418,12 +408,11 @@ hr {
 
 .btn:hover {
 	background: #375498;
-	color: #fff
+	color: #fff !important;
 }
 
 .btn-ans {
 	position: relative;
-	top: 16px
 }
 
 .btn-ans i {
@@ -2390,23 +2379,9 @@ hr {
 
 
 .header-area .main-menu ul li {
-	display: inline-block;
-	position: relative;
 	z-index: 1
 }
 
-.header-area .main-menu ul li a {
-	color: #fff;
-	font-weight: 500;
-	display: block;
-	font-size: 16px;
-	position: relative;
-	-webkit-transition: all .3s ease-out 0s;
-	-moz-transition: all .3s ease-out 0s;
-	-ms-transition: all .3s ease-out 0s;
-	-o-transition: all .3s ease-out 0s;
-	transition: all .3s ease-out 0s
-}
 
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
 	.header-area .main-menu ul li a {

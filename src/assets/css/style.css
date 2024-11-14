@@ -226,7 +226,7 @@ a {
 }
 
 a:hover {
-	color: #fff
+	
 }
 
 a:focus,
@@ -467,6 +467,13 @@ hr {
 	border-radius: 0
 }
 
+.btn::before a{
+	color:#fff !important;
+}
+.btn::before a:hover{
+	color:#fff !important;
+}
+
 .btn:hover::before {
 	transform: scaleX(1);
 	color: #fff !important;
@@ -474,7 +481,7 @@ hr {
 }
 
 a:hover {
-	color: #fff
+	color: #fff !important
 }
 
 .btn.focus,
@@ -2743,8 +2750,6 @@ hero-btn {
 }
 
 .header-area .main-header .main-menu ul li {
-	display: inline-block;
-	position: relative;
 	z-index: 1
 }
 
@@ -2762,6 +2767,7 @@ hero-btn {
 	position: relative;
 	font-family: "Josefin Sans", sans-serif
 }
+.header-area .main-header .main-menu ul li a:hover{ color: #333;}
 
 .header-area .main-header .main-menu ul li .el-sub-menu__title {
 	color: #112957;
@@ -2791,6 +2797,7 @@ hero-btn {
 	position: absolute;
 	width: 170px;
 	background: rgba(255, 255, 255, 0.9);
+	color: #333;
 	left: 0;
 	top: 80%;
 	visibility: hidden;
@@ -7743,7 +7750,7 @@ del {
 .text::after {
 	content: '';
 	width: 999vw;
-	height: 999vw;
+	height:auto;
 	position: absolute;
 	box-shadow: inset calc(100px - 999vw) calc(30px - 999vw) 0 0 #fff;
 	margin-left: -100px;
@@ -7961,11 +7968,14 @@ a.dbbtncircle2 {
 	color: #fff;
 	border-radius: 10px;
 	padding: 20px !important;
-	margin: 0px 0px 10px;
+	margin: 0px 5px 10px;
 }
 
 .btnanli02 .btn a {
-	color: #fff;
+	color: #fff !important;
+}
+.btnanli02 .btn a:hover {
+	color: #fff !important;
 }
 
 
@@ -8005,3 +8015,8 @@ a.dbbtncircle2 {
 .el-row{ display: block;}
 .el-select__wrapper{ border: 0px; outline: none;}
 .el-input__wrapper{border: 0px; }
+
+
+.btnanli02 .btn::before a{color: #fff !important;}
+.btnanli02 .btn::before a:hover{color: #fff !important;}
+.el-menu--horizontal .el-menu-item:not(.is-disabled):hover, .el-menu--horizontal .el-menu-item:not(.is-disabled):focus{ background: #375498; color: #fff;}
