@@ -8,7 +8,7 @@
 						<div class="row">
 							<div class="col-xl-12">
 								<div class="hero-cap hero-cap2 text-center">
-									<h2>栏目名称-文章详情</h2>
+									<h2>{{detail.Description??"详情"}}</h2>
 								</div>
 							</div>
 						</div>
@@ -26,16 +26,16 @@
 							<div class="single-post">
 
 								<div class="blog_details">
-									<h2>法律名称-文章标题
+									<h2>{{detail.LegalName}}
 									</h2>
 									<ul class="blog-info-link mt-3 mb-4">
-										<li><i class="fa fa-users"></i>作者</li>
-										<li><i class="fa fa-comments"></i>类型</li>
-										<li><i class="fa fa-calendar-times"></i>2024-11-01</li>
+										<li><i class="fa fa-users"></i>{{detail.Translator}}</li>
+										<li><i class="fa fa-comments"></i>{{detail.PublishOrganization}}</li>
+										<li><i class="fa fa-calendar-times"></i>{{detail.PublishTime?.split('T')[0]}}</li>
 									</ul>
 									<div class="quote-wrapper">
 										<div class="quotes">
-											<p>文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介
+											<p>{{detail.Description}}
 											</p>
 										</div>
 									</div>
@@ -44,9 +44,7 @@
 											width="100%">
 									</div>
 									<p>
-										文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容
-										文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容
-										文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容
+										<div v-html="detail.Content"></div>
 									</p>
 								</div>
 							</div>
@@ -65,19 +63,19 @@
 													<span class="lnr text-white ti-arrow-left"></span>
 												</a>
 											</div>
-											<div class="detials">
+											<div  v-if="up" class="detials">
 												<p>上一篇</p>
-												<a href="#">
-													<h4>文章标题文章标题文章标题</h4>
+												<a :href="'/regulationsdetails?id='+up.ID">
+													<h4>{{up.LegalName}}</h4>
 												</a>
 											</div>
 										</div>
 										<div
 											class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
-											<div class="detials">
+											<div v-if="next" class="detials">
 												<p>下一篇</p>
-												<a href="#">
-													<h4>文章标题文章标题文章标题</h4>
+												<a :href="'/regulationsdetails?id='+next.ID">
+													<h4>{{next.LegalName}}</h4>
 												</a>
 											</div>
 											<div class="arrow">
@@ -102,3 +100,40 @@
 		</el-col>
 	</el-row>
 </template>
+
+<script setup>
+import { ref, computed, onMounted } from 'vue'
+import { getListByValue } from "@/api/settingitme";
+import { getTagList, getList, getHomeList,getById } from "@/api/guarantee";
+import { ElMessage } from 'element-plus'
+import config from '@/utils/config';
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
+
+ const detail = ref({})
+ const up = ref({})
+ const next = ref({})
+ const getDetail=(id)=>{	 
+	if(id){
+		getById({id:id}).then(res => {
+		console.log(res)
+		if (res.code) {			 
+			detail.value = res.data.info
+			up.value = res.data.up
+			next.value = res.data.next
+		}
+	})
+	}
+	
+ }
+
+onMounted(() => {
+	getDetail(route.query.id)
+});
+
+</script>
+
+<style>
+ 
+</style>

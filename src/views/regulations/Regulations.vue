@@ -176,11 +176,10 @@
 												<div class="blog_details">
 													<div class="anlicss">
 														<div class="btnanli01"><a class="d-inline-block"
-																href="tongyong_details.html">
+																:href="'/regulationsdetails?id='+page.ID">
 																<h2>{{ page.LegalName }}</h2>
 															</a>
-															<div class="btn btn-ans"><a target="_blank" :href="config.CONFIG_IMGURL+ page.File">下载</a></div>
-
+ 
 														</div>
 														<div class="btnanli02">
 															<div class="btn btn-ans"><a href="#">查阅</a></div>

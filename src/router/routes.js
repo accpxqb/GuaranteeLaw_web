@@ -28,6 +28,12 @@ routes.push({
       onMenu: "false",
     },
     {
+      path: "regulationsdetails",
+      name: "regulationsdetails",
+      component: () => import("../views/regulations/Regulations_Details.vue"),
+      onMenu: "false",
+    },
+    {
       path: "theory",
       name: "theory",
       component: () => import("../views/theory/Theory.vue"),
