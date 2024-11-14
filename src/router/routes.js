@@ -40,6 +40,12 @@ routes.push({
       onMenu: "false",
     },
     {
+      path: "news",
+      name: "news",
+      component: () => import("../views/news/news.vue"),
+      onMenu: "false",
+    },
+    {
       path: "",
       name: "HomePage",
       component: () => import("../views/homepage/Homepage.vue"),

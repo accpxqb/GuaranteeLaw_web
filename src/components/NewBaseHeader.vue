@@ -23,7 +23,7 @@
 										<el-menu-item><a href="/theory">法学理论</a></el-menu-item>
 										<el-menu-item><a href="/case">案例分析</a></el-menu-item>
 										<el-menu-item><a href="/zjzx">专家咨询</a></el-menu-item>
-										<el-menu-item><a href="/hydt">行业动态</a></el-menu-item>
+										<el-menu-item><a href="/news">行业动态</a></el-menu-item>
 										<!--<el-sub-menu index="/hydt">
 										    <template #title>行业动态</template>
 										    <el-menu-item index="/xrx">信融信</el-menu-item>
