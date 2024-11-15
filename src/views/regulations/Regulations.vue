@@ -1,4 +1,5 @@
 <template>
+		
 	<!-- Hero Section Begin -->
 	<section class="hero spad set-bg" data-setbg="./src/assets/img/hero/h1_hero.jpg"
 		style="background-image: url('./src/assets/img/hero/h1_hero.jpg');">
@@ -15,7 +16,7 @@
 		</div>
 	</section>
 	<!-- Hero Section End -->
-
+ 
 	<!--? Services Ara Start -->
 	<el-row justify="center" align="middle">
 		<el-row class="services-area section-padding4">
@@ -56,7 +57,7 @@
 											<div class="filter__item last__item">
 												<h5>发布者组织体</h5>
 												<div class="filter__item__input">
-													<el-select class="nice-select"
+													<el-select 
 														v-model="formInline.PublishOrganization" clearable
 														placeholder="请选择">
 														<el-option v-for="item in optionsShow" :key="item.Id"
