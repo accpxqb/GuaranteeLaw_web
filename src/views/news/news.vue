@@ -174,11 +174,9 @@
 												<div class="blog_details">
 													<div class="anlicss">
 														<div class="btnanli01"><a class="d-inline-block"
-																href="tongyong_details.html">
+																:href="'/newsdetails?id='+page.ID">
 																<h2>{{ page.Title }}</h2>
 															</a>
-															 
-
 														</div>
 														<!-- <div class="btnanli02">
 															<div class="btn btn-ans"><a href="#">查阅</a></div>
@@ -203,7 +201,7 @@
 														<li><a href="#"><i class="fa fa-users"></i>{{ page.Clicks
 																}}</a></li>
 														<li><a href="#"><i class="fa fa-calendar-times"></i>{{
-																page.PublishTime?.split('T')[0] }}</a>
+																page.CreateTime?.split('T')[0] }}</a>
 														</li>
 													</ul>
 												</div>
@@ -244,7 +242,7 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { getListByValue } from "@/api/settingitme";
-import { getTagList, getMenuListByTitle, getHomeList, getArticleList, getArticleById } from "@/api/news";
+import { getTagList, getMenuListByTitle, getHomeList, getArticleList, getById } from "@/api/news";
 import { ElMessage } from 'element-plus'
 import config from '@/utils/config';
 

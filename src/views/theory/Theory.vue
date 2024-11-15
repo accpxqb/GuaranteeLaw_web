@@ -184,15 +184,14 @@
 												<div class="blog_details">
 													<div class="anlicss">
 														<div class="btnanli01"><a class="d-inline-block"
-																href="tongyong_details.html">
+																:href="'/theorydetails?id='+page.ID">
 																<h2>{{ page.Topic }}</h2>
 															</a>
-															<div class="btn btn-ans"><a target="_blank"
-																	:href="config.CONFIG_IMGURL+ page.File">下载</a></div>
+															 
 
 														</div>
 														<div class="btnanli02" >
-															<div class="btn btn-ans"><a href="#">查阅</a></div>
+															<div class="btn btn-ans"><a :href="'/theorydetails?id='+page.ID">查阅</a></div>
 															<div class="btn btn-ans"><a
 																	:href="config.CONFIG_API+ page.File">下载</a></div>
 														</div>

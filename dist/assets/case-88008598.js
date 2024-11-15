@@ -1,0 +1,1 @@
+import{s as e}from"./request-e65f911c.js";function r(t){return e({url:"/case/getList",method:"Post",data:t})}function o(t){return e({url:"/case/getTagList",method:"Post",data:t})}function a(t){return e({url:"/case/getHomeList",method:"Get",params:t})}function i(t){return e({url:"/case/getById",method:"Get",params:t})}export{o as a,a as b,i as c,r as g};

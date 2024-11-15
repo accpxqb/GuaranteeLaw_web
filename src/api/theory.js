@@ -24,3 +24,11 @@ export function getHomeList(params) {
       params,
     });
   }
+  // 详情
+export function getById(params) {
+  return request({
+    url: "/Theory/getById",
+    method: "Get",
+    params,
+  });
+}

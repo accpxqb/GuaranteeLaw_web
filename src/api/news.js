@@ -35,10 +35,11 @@ export function getArticleList(params) {
     });
   }
   //获取文章
-export function getArticleById(params) {
-    return request({
-      url: "/Menu/getArticleById",
-      method: "Get",
-      params,
-    });
-  }
+ 
+    export function getById(params) {
+      return request({
+        url: "/Menu/getArticleById",
+        method: "Get",
+        params,
+      });
+    }

@@ -25,20 +25,20 @@
 						<!-- Section Tittle -->
 						<div class="section-tittle ">
 							<span>信融信&nbsp;&nbsp;</span>
-							<h2>案例分析</h2>
+							<h2>专家咨询</h2>
 						</div>
 					</div>
 					<div class="col-xl-6 col-lg-6">
 						<div class="properties__button">
 							<!--Nav Button  -->
-							<!-- <nav>
+							<nav>
 								<div class="nav nav-tabs" id="nav-tab" role="tablist">
 									<button class="nav-item nav-link" @click="toggleButton('国内')"
 										:class="{ active: selectedButton === '国内' }">国内</button>
 									<button class="nav-item nav-link" @click="toggleButton('国外')"
 										:class="{ active: selectedButton === '国外' }">国外</button>
 								</div>
-							</nav> -->
+							</nav>
 							<!--End Nav Button  -->
 						</div>
 					</div>
@@ -53,38 +53,26 @@
 								<el-row class="row">
 									<el-col :span="24">
 										<form action="#" class="filter__form">
-											<div class="filter__item last__item">
-												<h5>法律类型</h5>
+											<div v-if="selectedButton=='国内'" class="filter__item last__item">
+												<h5>专家咨询</h5>
 												<div class="filter__item__input">
-													<el-select class="nice-select" v-model="formInline.Types" clearable
-														placeholder="请选择">
-														<el-option value="保理">
-															保理
-														</el-option>
-														<el-option value="融资租赁">
-															融资租赁
-														</el-option>
-														<el-option value="其他">
-															其他
-														</el-option>
+													<el-cascader placeholder="请选择省市" :props="cascaderProps"
+														:options="regionData" v-model="formInline.SelectedOptions"
+														clearable
+														@change="handleChange"
+														@clear ="handleClear"
+														 />
 
-													</el-select>
 												</div>
 											</div>
 											<div class="filter__item">
-												<h5>作者姓名</h5>
+												<h5>专家名称</h5>
 												<div class="filter__item__input">
-													<el-input v-model="formInline.Author" placeholder="请输入您要检索的作者姓名"
+													<el-input v-model="formInline.Title" placeholder="请输入您要检索的专家名称"
 														clearable />
 												</div>
 											</div>
-											<div class="filter__item">
-												<h5>题目</h5>
-												<div class="filter__item__input">
-													<el-input v-model="formInline.Topic" placeholder="请输入您要检索的题目"
-														clearable />
-												</div>
-											</div>
+
 											<el-button type="primary" @click="doSearch()">立即搜索</el-button>
 										</form>
 									</el-col>
@@ -99,50 +87,43 @@
 									<el-col :span="6">
 										<div class="blog_right_sidebar">
 											<aside class="single_sidebar_widget post_category_widget">
-												<h4 class="widget_title">案例分析</h4>
+												<h4 class="widget_title">专家咨询</h4>
 												<div class="dbdtwrap">
 													<div class="dbdtnav">
 														<ul>
-															<li class="dbdtnav-list">
+															<!-- <li class="dbdtnav-list">
 																<h2 class="on">
 																	<div></div>
 																	案例分析
 																	<i></i>
 																</h2>
-															</li>
-															<li class="dbdtnav-list">
-																<h2>融资租赁
+															</li> -->
+															<!-- <li  v-for="item in menuList.filter(x => x.MenuChannelid != 0)"
+																:key="item.Menuid" @click="menuClick(item.Menuid)" class="dbdtnav-list">
+																<h2
+																	:class="formInline.Menuid === item.Menuid ? 'on' : ''">
+																	{{ item.Menutitle }}
 																	<i></i>
 																</h2>
-															</li>
-															<li class="dbdtnav-list">
-																<h2>保理
-																	<i></i>
-																</h2>
-															</li>
-															<li class="dbdtnav-list">
-																<h2>其他
-																	<i></i>
-																</h2>
-															</li>
+															</li> -->
+
+
 														</ul>
 													</div>
 												</div>
 											</aside>
 
 											<aside class="single_sidebar_widget popular_post_widget">
-												<h3 class="widget_title">热门案例分析</h3>
+												<h3 class="widget_title">热门专家咨询</h3>
 												<div class="media post_item" v-for="home in homeList" :key="ID">
-													<el-image src="../../src/assets/img/post/post_1.png"
+													<el-image :src="config.CONFIG_IMGURL + home.pic"
 														alt="post"></el-image>
 													<div class="media-body">
 														<a href="detail">
-															<h3>{{ home.Name }}</h3>
+															<h3>{{ home.Title }}</h3>
 														</a>
-														<h3>{{ home.CourtHierarchy }}</h3>
-														<h3>{{ home.CaseType }}</h3>
-														<h3>{{ home.抵押合同 }}</h3>
-														<p>{{ home.PublishTime?.split('T')[0] }}</p>
+														<h3>{{ home.Author }}</h3>
+														<p>{{ home.CreateTime?.split('T')[0] }}</p>
 													</div>
 												</div>
 
@@ -164,13 +145,14 @@
 										<div class="blog_left_sidebar">
 											<article class="blog_item">
 												<div class="blog_top">
-													<span>案例分析</span>
+													<span>专家咨询</span>
 													<div class="wrapper">
 														<input id="exp1" class="exp" type="checkbox">
 														<div class="text">
 															<label class="btn_zs" for="exp1"></label>
 															<div class="single_sidebar_widget tag_cloud_widget">
 																<ul class="blist888">
+																	 
 																	<li v-for="tag in tagList">
 																		<a @click="tagClick(tag)">{{ tag }}</a>
 																	</li>
@@ -186,17 +168,15 @@
 												<div class="blog_details">
 													<div class="anlicss">
 														<div class="btnanli01"><a class="d-inline-block"
-															:href="'/casedetails?id='+page.ID">
-																<h2>{{ page.Name }}</h2>
+																:href="'/newsdetails?id='+page.ID">
+																<h2>{{ page.Title }}</h2>
 															</a>
-															 
-
 														</div>
-														<div class="btnanli02" >
-															<div class="btn btn-ans"><a :href="'/casedetails?id='+page.ID">查阅</a></div>
+														<!-- <div class="btnanli02">
+															<div class="btn btn-ans"><a href="#">查阅</a></div>
 															<div class="btn btn-ans"><a
-																	:href="config.CONFIG_API+ page.File">下载</a></div>
-														</div>
+																	:href="config.CONFIG_API + page.File">下载</a></div>
+														</div> -->
 													</div>
 													<p>{{ page.Description }}
 													</p>
@@ -210,16 +190,15 @@
 													</div>
 													<ul class="blog-info-link">
 														<li><a href="#"><i class="fa fa-comments"></i>{{
-																page.CaseType }}</a>
+																page.Author }}</a>
 														</li>
-														<li><a href="#"><i class="fa fa-users"></i>{{ page.DocumentType
-																}}</a></li>
-																<li><a href="#"><i class="fa fa-users"></i>{{ page.Area
-																}}</a></li>
-																<li><a href="#"><i class="fa fa-users"></i>{{ page.CourtHierarchy
+														<li><a href="#"><i class="fa fa-comments"></i>{{
+																page.City }}</a>
+														</li>
+														<li><a href="#"><i class="fa fa-users"></i>{{ page.Clicks
 																}}</a></li>
 														<li><a href="#"><i class="fa fa-calendar-times"></i>{{
-																page.PublishTime?.split('T')[0] }}</a>
+																page.CreateTime?.split('T')[0] }}</a>
 														</li>
 													</ul>
 												</div>
@@ -260,11 +239,41 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { getListByValue } from "@/api/settingitme";
-import { getTagList, getList, getHomeList } from "@/api/case";
+import { getTagList, getMenuListByTitle, getHomeList, getArticleList, getById } from "@/api/news";
 import { ElMessage } from 'element-plus'
 import config from '@/utils/config';
+import { regionData, CodeToText } from "element-china-area-data";
 
-const doSearch=()=>{
+
+const handleClear = () => {
+    console.log("清空")
+    formInline.value.Province = '';
+    formInline.value.City = '';
+	formInline.value.SelectedOptions="请选择省市"
+}
+const handleChange = (val) => {
+	if(!val)return
+    console.log(val)
+    if (val[0] != null ) {
+        formInline.value.Province = val[0];
+     }
+	 if (val[1] != null) {
+        formInline.value.City = val[1];
+     }
+}
+const cascaderProps = ref({
+    checkStrictly: true,      // 允许选择任意一级，不强制子级联动
+    value: 'label',      // 使用 label 作为 value
+    expandTrigger: 'hover',    // 子菜单通过 hover 展开（可选）
+
+})
+
+const menuClick = (menuid)=>{
+	formInline.value.Menuid = menuid
+	getPageList()
+
+}
+const doSearch = () => {
 	formInline.value.Tag = null
 	getPageList()
 
@@ -276,7 +285,7 @@ const tagClick = (tag) => {
 
 }
 
-const formInline = ref({ Countries: "国内" })
+const formInline = ref({ Countries: "国内",Menuid:8 })
 const selectedButton = ref('国内'); // 默认选中按钮1
 const options = ref([])
 // 根据选中的按钮过滤 options
@@ -300,6 +309,7 @@ const toggleButton = (button) => {
 	selectedButton.value = button;
 	formInline.value = {} // 切换时清空
 	formInline.value.Countries = button
+	formInline.value.Menuid = 8
 	getPageList()
 };
 
@@ -336,7 +346,7 @@ const pageList = ref([])
 const getPageList = () => {
 	let data = { ...formInline.value, ...pageRequest.value }
 	console.log(data)
-	getList(data).then(res => {
+	getArticleList(data).then(res => {
 		console.log(res)
 		if (res.code) {
 
@@ -345,12 +355,15 @@ const getPageList = () => {
 
 		}
 	})
+
+	getAllTagList(formInline.value.Menuid)
+	getFlagList(formInline.value.Menuid)
 }
 //tag列表
 const tagList = ref([])
-const getAllTagList = () => {
+const getAllTagList = (menuid) => {
 
-	getTagList().then(res => {
+	getTagList({menuid:menuid}).then(res => {
 		console.log(res)
 		if (res.code) {
 			tagList.value = res.data
@@ -359,22 +372,41 @@ const getAllTagList = () => {
 }
 //flag文章列表
 const homeList = ref([])
-const getFlagList = () => {
+const getFlagList = (menuid) => {
+	getHomeList({menuid:menuid, flag: "h", num: 5 }).then(res => {
+		console.log(res)
+		if (res.code) {			
+			homeList.value = res.data
+		}
+	})
+}
+//栏目列表
+const menuList = ref([])
+const getMenuList = () => {
 
-	getHomeList({ flag: "h", num: 5 }).then(res => {
+	getMenuListByTitle({ title: "行业动态" }).then(res => {
 		console.log(res)
 		if (res.code) {
-			homeList.value = res.data
-
+			menuList.value = res.data
+			menuList.value = res.data.map(x => {
+				return {
+					Menuid: x.Menuid,
+					Menutitle: x.Menutitle,
+					MenuChannelid: x.MenuChannelid
+				};
+			})
+			if(menuList.value[0]){
+				menuList.value.unshift({ Menuid: null, Menutitle: "不限", MenuChannelid: 0 })
+			}
+			console.log(menuList.value)
 		}
 	})
 }
 
 onMounted(() => {
-	// GetOptions()
+	// getMenuList()
 	getPageList()
-	getAllTagList()
-	getFlagList()
+	
 });
 
 </script>

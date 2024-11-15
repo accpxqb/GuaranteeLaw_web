@@ -40,15 +40,45 @@ routes.push({
       onMenu: "false",
     },
     {
+      path: "theorydetails",
+      name: "theorydetails",
+      component: () => import("../views/theory/details.vue"),
+      onMenu: "false",
+    },
+    {
       path: "case",
       name: "case",
       component: () => import("../views/case/Case.vue"),
       onMenu: "false",
     },
     {
+      path: "casedetails",
+      name: "casedetails",
+      component: () => import("../views/case/details.vue"),
+      onMenu: "false",
+    },
+    {
+      path: "expert",
+      name: "expert",
+      component: () => import("../views/expert/expert.vue"),
+      onMenu: "false",
+    },
+    {
+      path: "expertdetails",
+      name: "expertdetails",
+      component: () => import("../views/expert/details.vue"),
+      onMenu: "false",
+    },
+    {
       path: "news",
       name: "news",
       component: () => import("../views/news/news.vue"),
+      onMenu: "false",
+    },
+    {
+      path: "newsdetails",
+      name: "newsdetails",
+      component: () => import("../views/news/details.vue"),
       onMenu: "false",
     },
     {

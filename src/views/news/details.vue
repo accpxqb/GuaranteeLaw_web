@@ -26,12 +26,12 @@
 							<div class="single-post">
 
 								<div class="blog_details">
-									<h2>{{detail.LegalName}}
+									<h2>{{detail.Title}}
 									</h2>
 									<ul class="blog-info-link mt-3 mb-4">
-										<li><i class="fa fa-users"></i>{{detail.Translator}}</li>
-										<li><i class="fa fa-comments"></i>{{detail.PublishOrganization}}</li>
-										<li><i class="fa fa-calendar-times"></i>{{detail.PublishTime?.split('T')[0]}}</li>
+										<li><i class="fa fa-users"></i>{{detail.Author}}</li>
+										<li><i class="fa fa-comments"></i>{{detail.Clicks}}</li>
+										<li><i class="fa fa-calendar-times"></i>{{detail.CreateTime?.split('T')[0]}}</li>
 									</ul>
 									<div class="quote-wrapper">
 										<div class="quotes">
@@ -65,8 +65,8 @@
 											</div>
 											<div  v-if="up" class="detials">
 												<p>上一篇</p>
-												<a :href="'/regulationsdetails?id='+up.ID">
-													<h4>{{up.LegalName}}</h4>
+												<a :href="'/newsdetails?id='+up.ID">
+													<h4>{{up.Title}}</h4>
 												</a>
 											</div>
 										</div>
@@ -74,8 +74,8 @@
 											class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
 											<div v-if="next" class="detials">
 												<p>下一篇</p>
-												<a :href="'/regulationsdetails?id='+next.ID">
-													<h4>{{next.LegalName}}</h4>
+												<a :href="'/newsdetails?id='+next.ID">
+													<h4>{{next.Title}}</h4>
 												</a>
 											</div>
 											<div class="arrow">
@@ -104,7 +104,7 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { getListByValue } from "@/api/settingitme";
-import { getTagList, getList, getHomeList,getById } from "@/api/guarantee";
+import { getTagList, getMenuListByTitle, getHomeList, getArticleList, getById } from "@/api/news";
 import { ElMessage } from 'element-plus'
 import config from '@/utils/config';
 import { useRoute } from 'vue-router';
