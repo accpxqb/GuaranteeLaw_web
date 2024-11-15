@@ -1,1 +1,0 @@
-const e={Keyword:"目的地",Rooms:"房间",SingleRooms:"单人间",DoubleRooms:"双人间",Residents:"住客",Adults:"成人",Children:"儿童",CheckIn:"入住时间",CheckOut:"退房时间",Nights:"入住时长",HotelLevel:"酒店级别",Budget:"预算",Requirements:"备注",Memo:"留言",TakeOrder:"抢单",TakeOrdered:"已接单"},o={sourcingList:e};export{o as default,e as sourcingList};
